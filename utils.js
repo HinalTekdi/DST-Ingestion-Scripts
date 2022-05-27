@@ -26,6 +26,8 @@ module.exports = {
       }
     }).then((response) => {
      return response
+    }).catch((e) => {
+      console.log('eee', e);
     })
   },
 
@@ -40,6 +42,8 @@ module.exports = {
         }
       }).then((response) => {
         return response
+      }).catch((e) => {
+        console.log('eee', e);
       })
   },
 
@@ -54,6 +58,8 @@ module.exports = {
       }
     }).then((response) => {
       return response
+    }).catch((e) => {
+      console.log('eee', e);
     })
   },
 
@@ -68,6 +74,57 @@ module.exports = {
       }
     }).then((response) => {
       return response
+    }).catch((e) => {
+      console.log('eee', e);
+    })
+  },
+
+  getITIByNameAndDistrict: async function (data) {
+    return axios({
+      method: 'get',
+      url: `${API_URL}/getITIByNameAndDistrict`,
+      data: JSON.stringify(data),
+      headers: {
+        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => {
+      return response
+    }).catch((e) => {
+       console.log('eee', e);
+    })
+  },
+
+
+  getTraineeByRegisterationNumber: async function (data) {
+    return axios({
+      method: 'get',
+      url: `${API_URL}/getTraineeByRegisterationNumber`,
+      data: JSON.stringify(data),
+      headers: {
+        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => {
+      return response
+    }).catch((e) => {
+      console.log('eee', e);
+    })
+  },
+
+  getIndustryByNameAndDistrict: async function (data) {
+    return axios({
+      method: 'get',
+      url: `${API_URL}/getIndustryByNameAndDistrict`,
+      data: JSON.stringify(data),
+      headers: {
+        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+        'Content-Type': 'application/json',
+      }
+    }).then((response) => {
+      return response
+    }).catch((e) => {
+      console.log('eee', e);
     })
   }
 }
